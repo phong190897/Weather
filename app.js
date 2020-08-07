@@ -14,7 +14,7 @@ window.addEventListener('load', ()=>{
             lat = position.coords.latitude;
 
             const proxy = `https://cors-anywhere.herokuapp.com/`;
-            const api = `${proxy}api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=d4564cb2fbdd6b107d5ce68854383621`;
+            const api = `${proxy}api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=imperial&appid=d4564cb2fbdd6b107d5ce68854383621`;
 
             fetch(api)
             .then(data => {
@@ -38,12 +38,12 @@ window.addEventListener('load', ()=>{
 
                 temperatureSection.addEventListener('click', () => {
                     if(temperatureSpan.textContent === 'F'){
-                        temperatureSpan.textContent = "C";
+                        temperatureSpan.innerHTML = `&#8451;`;
                         temperatureDegree.textContent = Math.floor(celcius);
                     }
                     else
                     {
-                        temperatureSpan.textContent = "F";
+                        temperatureSpan.innerHTML = `&#8457;`;
                         temperatureDegree.textContent = temp;
                     }
                 });
