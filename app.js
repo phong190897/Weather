@@ -36,14 +36,15 @@ window.addEventListener('load', ()=>{
                 locationTimezone.textContent = country + '/' + data.name;
                 iconImage.src = `http://openweathermap.org/img/w/${icon}.png`;
 
+
                 temperatureSection.addEventListener('click', () => {
                     if(temperatureSpan.textContent === 'F'){
-                        temperatureSpan.innerHTML = `&#8451;`;
+                        temperatureSpan.innerHTML = `C`;
                         temperatureDegree.textContent = Math.floor(celcius);
                     }
                     else
                     {
-                        temperatureSpan.innerHTML = `&#8457;`;
+                        temperatureSpan.innerHTML = `F`;
                         temperatureDegree.textContent = temp;
                     }
                 });
